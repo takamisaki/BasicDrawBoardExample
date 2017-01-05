@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="gUP-JZ-2lZ">
+                                <rect key="frame" x="68" y="440" width="134" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UXw-rS-8dm"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="线宽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-LY-nt1">
+                                <rect key="frame" x="20" y="452" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ADY-LK-miq"/>
+                                    <constraint firstAttribute="width" constant="40" id="Iih-Nv-rZg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-KI-cPk">
+                                <rect key="frame" x="210" y="452" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7j7-IG-I9S"/>
+                                    <constraint firstAttribute="height" constant="20" id="cDY-tq-BXM"/>
+                                </constraints>
+                                <state key="normal" title="清空"/>
+                                <connections>
+                                    <action selector="clearDidTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Grk-K0-ewf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjC-4w-TLP">
+                                <rect key="frame" x="260" y="452" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="94E-Xb-xrE"/>
+                                    <constraint firstAttribute="height" constant="20" id="vbV-XH-0dg"/>
+                                </constraints>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveDidTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1T-iu-b6r"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGv-Jt-eOd" customClass="PaintView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gUP-JZ-2lZ" firstAttribute="leading" secondItem="XFb-LY-nt1" secondAttribute="trailing" constant="10" id="4Hh-wT-Mee"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fv2-KI-cPk" secondAttribute="bottom" constant="8" id="5kV-Tv-Obu"/>
+                            <constraint firstItem="XjC-4w-TLP" firstAttribute="leading" secondItem="fv2-KI-cPk" secondAttribute="trailing" constant="10" id="IgA-Pu-hgI"/>
+                            <constraint firstItem="XFb-LY-nt1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="PuJ-gg-Oqu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XFb-LY-nt1" secondAttribute="bottom" constant="8" id="QBU-Jq-7GL"/>
+                            <constraint firstItem="TGv-Jt-eOd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SE2-ij-KTZ"/>
+                            <constraint firstItem="gUP-JZ-2lZ" firstAttribute="top" secondItem="TGv-Jt-eOd" secondAttribute="bottom" constant="30" id="U5N-aj-YDq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XjC-4w-TLP" secondAttribute="bottom" constant="8" id="VB4-cX-ow8"/>
+                            <constraint firstItem="fv2-KI-cPk" firstAttribute="leading" secondItem="gUP-JZ-2lZ" secondAttribute="trailing" constant="10" id="iB6-rF-wjE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gUP-JZ-2lZ" secondAttribute="bottom" constant="10" id="iZu-1S-aIi"/>
+                            <constraint firstAttribute="trailing" secondItem="XjC-4w-TLP" secondAttribute="trailing" constant="20" id="km0-EL-byQ"/>
+                            <constraint firstItem="TGv-Jt-eOd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kn6-7Z-BzZ"/>
+                            <constraint firstAttribute="trailing" secondItem="TGv-Jt-eOd" secondAttribute="trailing" id="zD0-eT-I2f"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="PView" destination="TGv-Jt-eOd" id="xz1-2p-Ndc"/>
+                        <outlet property="clearDraw" destination="fv2-KI-cPk" id="OSP-AA-bzH"/>
+                        <outlet property="lineWidthSlider" destination="gUP-JZ-2lZ" id="rqt-qU-bSa"/>
+                        <outlet property="saveDraw" destination="XjC-4w-TLP" id="Zsn-7r-sI5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="404"/>
+        </scene>
+    </scenes>
+</document>
